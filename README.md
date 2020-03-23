@@ -24,3 +24,6 @@ be found at [https://hexdocs.pm/helloelixir](https://hexdocs.pm/helloelixir).
 ```
 mix new helloProject
 ```
+
+安装依赖`mix deps.get`
+生成文档`mix docs`

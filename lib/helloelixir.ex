@@ -8,11 +8,13 @@ defmodule Helloelixir do
 
   ## Examples
 
-      iex> Helloelixir.hello()
+      iex> Helloelixir.hello("111111")
       :world
 
   """
-  def hello do
-    :world
+
+  @spec hello(String.t()) :: String.t()
+  def hello(name) do 
+    "world1"<>name
   end
 end
