@@ -11,6 +11,11 @@ elixir的文件有两种：
 
 mix.exs依赖配置文件，类似于`package.json`
 
+## elixir启动
+编译mix compile
+加载到交互iex -S mix
+进入交互iex，执行函数
+
 ## elixir的关键知识点
 
 ### 集合数据类型
