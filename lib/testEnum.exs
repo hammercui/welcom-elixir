@@ -9,3 +9,8 @@
 ret = Enum.all?(["aaa","bbb"],fn(s)->String.length(s) == 3 end)
 IO.puts(ret)
 IO.puts(ret)
+#返回集合中最大的值
+IO.inspect(Enum.max([1.3,4,5,10]))
+#fliter过滤，返回需要的元素
+a = Enum.filter([1,2,2,3,4,5],fn(x)->rem(x,2) == 0 end)
+IO.inspect(a)
