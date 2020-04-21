@@ -14,3 +14,7 @@ IO.inspect(Enum.max([1.3,4,5,10]))
 #fliter过滤，返回需要的元素
 a = Enum.filter([1,2,2,3,4,5],fn(x)->rem(x,2) == 0 end)
 IO.inspect(a)
+# reduce/3 集合不断计算，得到一个值
+
+a = Enum.reduce([1,2,3],10,fn(x,acc)-> x+ acc end)
+IO.inspect(a)
