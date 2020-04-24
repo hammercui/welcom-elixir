@@ -24,3 +24,10 @@ f = fn
 end
 IO.inspect(f.(1,3))
 IO.inspect(f.(-1,3))
+
+#匹配条件不是值时可以使用cond，类似于else if
+cond do
+  2+2 == 5 ->IO.inspect("This is not true")
+  2*2 == 5->IO.inspect("This is true")
+  true -> IO.inspect("catch err")
+end
