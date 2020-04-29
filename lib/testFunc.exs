@@ -39,7 +39,38 @@ IO.inspect(Greeter2.hello(1, 2))
 #m模式匹配函数的入参，比如入参必须包含某个key
 defmodule Greeter3 do
   def hello(%{name: pearson_name} = pearson) do
-    IO.puts("Hello" <> pearson_name)
-    IO.puts(pearson)
+    IO.puts("Hello " <> pearson_name)
+    IO.inspect(pearson)
   end
 end
+
+#声明一个map,不是严格排序的
+aa = %{name: "hammer", age: "21"}
+IO.inspect(Greeter3.hello(aa))
+
+#相同函数签名，根据哨兵来匹配不同的函数
+defmodule Greeter4 do
+  def hello(names) when is_list(names) do
+    names
+    |> Enum.join(", ")
+    |> hello
+  end
+
+  def hello(name) when is_binary(name) do
+    phrase(name)
+  end
+
+  #私有函数打印
+  defp phrase(str), do: IO.inspect(str)
+
+  # 默认参数,模式匹配不喜欢默认参数
+  def hello_default(str, language_code \\ "en") do
+    IO.inspect(str <> language_code)
+  end
+
+end
+
+Greeter4.hello(["hammer","cui"])
+Greeter4.hello_default("hammer ")
+
+
