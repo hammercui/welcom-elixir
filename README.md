@@ -27,3 +27,4 @@ mix new helloProject
 
 安装依赖`mix deps.get`
 生成文档`mix docs`
+生产环境编译`MIX_ENV=prod mix compile``

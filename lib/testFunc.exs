@@ -22,7 +22,6 @@ defmodule Length do
   #tail取数组的尾巴，尾部是除去第一个元素剩下的列表
   def of([head | tail]), do: head + of(tail)
 end
-
 IO.inspect(Length.of([1, 2, 3, 4]))
 
 #不同于其他语言的函数重载，函数由名字和元素组成，因此可以
@@ -72,5 +71,7 @@ end
 
 Greeter4.hello(["hammer","cui"])
 Greeter4.hello_default("hammer ")
+
+
 
 
