@@ -1,6 +1,6 @@
-defmodule Helloelixir do
+defmodule Hello do
   @moduledoc """
-  Documentation for `Helloelixir`.
+  Documentation for `Hello`.
   """
 
   @doc """
@@ -8,13 +8,13 @@ defmodule Helloelixir do
 
   ## Examples
 
-      iex> Helloelixir.hello("111111")
+      iex> Hello.hello(")
       :world
 
   """
 
-  @spec hello(String.t()) :: String.t()
-  def hello(name) do 
-    "world1"<>name
+  @spec say() :: String.t()
+  def say() do
+   IO.inspect "world1 Elixir!"
   end
 end
