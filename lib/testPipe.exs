@@ -33,3 +33,7 @@ defmodule My2 do
 end
 IO.inspect(b)
 IO.inspect(My2.reverse(b,[]))
+
+#for times <- 1..1000000 do
+#  IO.inspect(My2.reverse(b,[]))
+#end
