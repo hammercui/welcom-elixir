@@ -15,12 +15,21 @@ a = [1,2,3,4,5,6]
 
 #自定义实现数组反转
 defmodule My do
-  def reverse_do([]), do: []
+  def reverse([]), do: []
 #  def reverse(), do: [reverse(tail),head]
   def reverse(enumerable), do: Enum.reduce(enumerable, [], fn (x,acc)-> [x | acc] end)
 #   def reverse([head | tail]),do: [reverse(tail),head]
 end
 
-#IO.inspect(My.reverse(a))
+IO.inspect(My.reverse(a))
 #获得指定下标的值
 IO.inspect(Enum.at(a,1))
+
+#尾递归优化后的数组反转
+b = [1,2,3,4,5,6]
+defmodule My2 do
+  def reverse([],wei),do: wei
+  def reverse([head|tail],wei),do: reverse(tail,[head|wei])
+end
+IO.inspect(b)
+IO.inspect(My2.reverse(b,[]))
