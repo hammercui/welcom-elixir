@@ -26,3 +26,4 @@ helloelixir-*.tar
 
 .idea/
 helloelixir.iml
+/helloelixir

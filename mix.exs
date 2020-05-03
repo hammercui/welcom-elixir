@@ -6,9 +6,15 @@ defmodule Helloelixir.MixProject do
       app: :helloelixir,
       version: "0.1.0",
       elixir: "~> 1.10",
+      escript: escript(),
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
+  end
+
+  #注册main函数入口
+  defp escript do
+    [main_module: ExampleApp.CLI]
   end
 
   # Run "mix help compile.app" to learn about applications.
