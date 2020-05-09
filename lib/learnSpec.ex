@@ -33,3 +33,5 @@ defmodule Example do
 end
 
 IO.inspect(Example.sum_product(1))
+
+# 学习使用@type
