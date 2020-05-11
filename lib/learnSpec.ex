@@ -2,10 +2,15 @@
 # 复习下怎么定义结构体
 defmodule Example.StructDemo do
   defstruct first: 0, last: 10
+  # @type t(first,last) :: %Example.StructDemo{first: first, last: last}
+
+  @typedoc """
+      Type that represents Examples struct with :first as integer and :last as integer.
+  """
+  @type t :: %Example.StructDemo{first: integer, last: integer}
 end
 
 defmodule Example do
-
   @doc """
   定义入参
   ## Parameters
@@ -19,9 +24,11 @@ defmodule Example do
   end
 
   @doc """
-  定义入参为结构体的方法
+  定义入参为结构体的方法以及精简的类型的使用
   """
-  @spec sum_times(integer, %Example.StructDemo{first: integer, last: integer}) :: integer
+  # @spec sum_times(integer, %Example.StructDemo{first: integer, last: integer}) :: integer
+  # @spec sum_times(integer, Example.StructDemo.t(integer, integer)) :: integer
+  @spec sum_times(integer, Example.StructDemo.t) :: integer
   def sum_times(a, param) do
     for i <- param.first..param.last do
       i
@@ -32,7 +39,6 @@ defmodule Example do
   end
 end
 
-IO.inspect(Example.sum_product(1))
 
-# 学习使用@type
-
+# IO.inspect(Example.sum_product(1))
+IO.inspect(Example.sum_times(1, %{first: 1, last: 10}))
